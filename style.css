@@ -44,13 +44,20 @@ li {
 
 /* main */
 main {
-  margin-top: -90px;
+  /* margin-top: -90px; */
 }
 
 .main__title {
+  font-family: "impact", sans-serif;
   color: white;
   font-size: 100px;
   white-space: nowrap;
+  line-height: 0.8;
+  margin-top: -0.8em;
+}
+
+.main__contents {
+  padding: 20px 0;
 }
 
 .animal-card__image {
