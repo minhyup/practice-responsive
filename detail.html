@@ -13,8 +13,8 @@
             <img src="./images/header-logo.png" alt="로고" />
           </a>
         </h1>
-        <ul class="header__gnb">
-          <li class="gnb__item gnb__item--active"><a href="#">HOME</a></li>
+        <ul class="gnb">
+          <li class="gnb__item is_active"><a href="#">HOME</a></li>
           <li class="gnb__item"><a href="#">ABOUT</a></li>
           <li class="gnb__item"><a href="#">PORTPOLIO</a></li>
           <li class="gnb__item"><a href="#">VIDEO</a></li>
@@ -32,20 +32,58 @@
         <div class="detail-contents-wrap">
           <section class="movie-info">
             <img class="movie-info__cover" src="./images/cover01.png" alt="" />
-            <img class="movie-info__icon" src="./images/icon01.png" alt="" />
-            <div class="movie-info__contents">
-              <div class="movie-info__title-info">
-                <h2>타이틀<span>2001</span></h2>
-                <div class="star">
-                  <div class="star__rating star__rating--star2"></div>
+            <div class="flex_container align-start">
+              <img class="movie-info__icon" src="./images/icon01.png" alt="" />
+              <div class="movie-info__contents">
+                <div class="movie-info__title-info">
+                  <h2>타이틀 <span>2001</span></h2>
+                  <div class="star">
+                    <div class="star__rating star__rating--star2"></div>
+                  </div>
                 </div>
+                <p class="movie-info__description">
+                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                  Aenean commodo ligula eget dolor. Aenean massa. Cum sociis
+                  natoque penatibus et magnis dis parturient montes, nascetur
+                  ridiculus mus. Donec quam felis, ultricies nec, pellentesque
+                  eu, pretium quis, sem. Nulla consequat massa quis enim. Donec
+                  pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                  In enim justo, rhoncus ut, imperdiet a, venenatis vitae,
+                  justo. Nullam dictum felis eu pede mollis pretium. Integer
+                  tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean
+                  vulputate
+                </p>
               </div>
-              <p class="movie-info__description">내용내용</p>
             </div>
           </section>
-          <aside class="movie-sidebar">사이드</aside>
+          <aside class="movie-sidebar">
+            <div class="movie-card movie-card--blue">
+              <div class="movie-card__cover">
+                <img
+                  class="movie-card__image"
+                  src="./images/pixar01.png"
+                  alt="이미지1"
+                />
+              </div>
+              <h2 class="movie-card__title">제목</h2>
+              <p class="movie-card__description">
+                commodo ligula eget dolor. Aenean massa. Cum sociis natoque
+                penatibus et magnis dis parturient montes, nascetur ridiculus
+                mus. Donec quam commodo ligula eget dolor. Aenean massa. Cum
+                sociis natoque penatibus et magnis dis parturient montes,
+                nascetur ridiculus mus. Donec quam commodo ligula eget dolor.
+                Aenean massa. Cum sociis natoque penatibus et magnis dis
+                parturient montes, nascetur ridiculus mus. Donec quam commodo
+                ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et
+                magnis dis parturient montes, nascetur ridiculus mus. Donec quam
+              </p>
+            </div>
+          </aside>
         </div>
       </div>
     </main>
+    <footer class="main__footer">
+      <div class="l_layout">Copyright by GL HTML</div>
+    </footer>
   </body>
 </html>

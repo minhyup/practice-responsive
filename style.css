@@ -1,16 +1,13 @@
-/* reset */
+/************************************************
+* reset css
+*************************************************/
 body,
 h1,
 h2,
-ul {
+ul,
+p {
   padding: 0;
   margin: 0;
-}
-
-body {
-  color: #888;
-  background-color: #181c1f;
-  font-family: "arial";
 }
 
 a {
@@ -27,26 +24,40 @@ li {
   list-style-type: none;
 }
 
-/* 공통 */
+body {
+  color: #888;
+  background-color: #181c1f;
+  font-family: "arial";
+}
+
+/************************************************
+* 공통 기능
+*************************************************/
 .l_layout {
   max-width: 960px;
   margin: 0 auto;
+  padding: 0 20px;
   position: relative;
+}
+
+.l_layout::before {
+  content: " ";
+  display: table;
 }
 
 .l_row {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 -10px -20px;
+  margin: 0 -10px -20px -10px;
 }
 
 .l_col {
-  /* width: calc(100% / 4); */
   padding: 0 10px;
   box-sizing: border-box;
   margin-bottom: 20px;
 }
 
+/* mobile first */
 .l_col_12_12 {
   width: 100%;
 }
@@ -84,65 +95,37 @@ li {
   width: 8.33333333%;
 }
 
-.color_brown {
-  color: #c67722;
+.flex_container {
+  display: block;
 }
 
-.color_orange {
-  color: #e4512e;
+.flex_container.align-start {
+  align-items: flex-start;
 }
 
-.color_purple {
-  color: ##8711d2;
+/* 컴포넌트 시작 */
+:root {
+  font-family: "arial";
+  font-size: 62.5%;
 }
 
-.color_white {
-  color: #ddd;
+body {
+  background-color: #181c1f;
+  color: #888;
+  font-size: 1.4rem;
 }
 
-.color_blue {
-  color: #336699;
-}
-
-.color_green {
-  color: #75d211;
-}
-
-/* 헤더 시작 */
+/************************************************
+* 헤더 영역 시작
+*************************************************/
 .header {
   background-color: #31373e;
   color: rgba(255, 255, 255, 0.5);
-  position: relative;
 }
-
-/* .header::before {
-  content: " ";
-  display: table;
-} */
 
 .header__logo {
-  display: inline-block;
   margin: 20px 0;
   text-align: center;
-}
-
-.header__gnb {
-  display: flex;
-  background-color: #262c32;
-}
-
-.gnb__item {
-  padding: 15px 20px;
-}
-
-.gnb__item:hover {
-  background-color: tomato;
-}
-
-.gnb__item--active {
-  color: #fff;
-  background-color: #1c1f23;
-  pointer-events: none;
 }
 
 .header__cover-image {
@@ -153,66 +136,123 @@ li {
   display: none;
 }
 
-/* 메인 컨텐츠 시작 */
-main {
-  padding: 30px 0 30px;
-  background-color: #1c1f23;
+.gnb {
+  display: flex;
+  background-color: #262c32;
+  overflow: auto;
 }
 
-.main-detail {
-  padding: 20px 0 0;
+.gnb__item a {
+  padding: 15px 20px;
+  display: block;
+  font-size: 1.2rem;
+}
+
+.gnb__item. a.is_active {
+  color: #fff;
+  background-color: #1c1f23;
+  pointer-events: none;
+}
+
+.gnb__item a:hover {
+  background-color: tomato;
+}
+
+/************************************************
+* 메인 컨텐츠 시작
+*************************************************/
+.main {
+  padding: 30px 0 30px;
+  background-color: #1c1f23;
 }
 
 .movie-card {
   background-color: #111;
   border-radius: 10px;
-
-  /* 이게 있어야 왜 이미지 상단 radius가 먹는걸까??..*/
   overflow: hidden;
 }
 
+.movie-card--brown {
+  color: #c67722;
+}
+
+.movie-card--orange {
+  color: #e4512e;
+}
+
+.movie-card--purple {
+  color: ##8711d2;
+}
+
+.movie-card--white {
+  color: #ddd;
+}
+
+.movie-card--blue {
+  color: #336699;
+}
+
+.movie-card--green {
+  color: #75d211;
+}
+
+.movie-card__cover {
+  /* 패딩에 비율을 넣으면 부모의 가로 너비의 비율을 가져온다.*/
+  padding-top: 66.6666666%;
+  position: relative;
+}
+
 .movie-card__image {
+  position: absolute;
+  left: 0;
+  top: 0;
   vertical-align: top;
   border-bottom: 5px solid;
-  width: 100%;
 }
 
 .movie-card__title {
   font-weight: bold;
-  margin: 1rem;
-  font-size: 1.2rem;
+  margin: 1.6rem;
+  font-size: 2.4rem;
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
 }
 
 .movie-card__description {
-  line-height: 1.3;
-  font-size: 12px;
-  margin: 1rem;
+  margin: 1.6rem;
   color: #777;
   word-break: break-all;
-  /* 내용이 많으면 안보이게 처리 */
-  height: 78px;
+  line-height: 1.3;
+  height: calc(1.3em * 5);
   overflow: hidden;
   position: relative;
 }
 
 .movie-card__description::after {
   content: " ";
-  width: 100%;
   height: 100px;
   position: absolute;
   left: 0;
+  right: 0;
   bottom: 0;
   background-image: url(./images/movie-limit.png);
 }
 
-/* 디테일 컨텐츠 */
+/************************************************
+* 디테일 컨텐츠
+**************************************************/
+/* 상세 페이지 메인 영역 */
+.main-detail {
+  padding: 20px 0 0;
+}
+
+/* section, sidebar를 갖는 flexbox container */
 .detail-contents-wrap {
   display: flex;
-  background-color: tomato;
 }
+
+/* movie section */
 .movie-info {
   flex-grow: 1;
   background-color: #eee;
@@ -223,17 +263,40 @@ main {
 
 .movie-info__cover {
   vertical-align: top;
+  width: 100%;
 }
+
+/* movie icon */
 .movie-info__icon {
+  display: block;
+  margin: 0 auto -70px;
+  transform: translateY(-50%);
+  width: 50px;
 }
+
+/* movie info */
 .movie-info__contents {
+  padding: 30px;
 }
+
 .movie-info__title-info {
-  display: flex;
-  justify-content: space-between;
+  display: block;
+  padding: 20px 0;
+}
+
+.movie-info__title-info h2 {
+  text-align: center;
+  color: green;
+}
+
+.movie-info__title-info h2 span {
+  font-size: 0.8em;
+  color: #999;
+  font-weight: normal;
 }
 
 .star {
+  margin: 10px auto;
   width: 100px;
   height: 20px;
   background-image: url(./images/star.png);
@@ -244,28 +307,30 @@ main {
   background-image: url(./images/star.png);
   background-position: left bottom;
 }
-.star__rating.star__rating--star1 {
+
+.star__rating.star__rating--star2 {
   width: 40px;
 }
 
+.movie-info__description {
+  text-align: center;
+  color: #999;
+  line-height: 1.4;
+}
+
 .movie-sidebar {
-  flex-shrink: 0;
-  width: 250px;
-  background-color: violet;
+  display: none;
 }
 
 .main__footer {
   border-top: 1px solid #666;
-  font-size: 0.6rem;
+  font-size: 1.6rem;
   color: #666;
   padding: 30px;
 }
 
 /* 태블릿 */
-@media (min-width: 700px) {
-  .header__cover-image {
-    display: block;
-  }
+@media (min-width: 720px) {
   .l_col_tablet_12_12 {
     width: 100%;
   }
@@ -302,13 +367,47 @@ main {
   .l_col_tablet_1_12 {
     width: 8.33333333%;
   }
+
+  .flex_container {
+    display: flex;
+  }
+
+  .header__logo {
+    text-align: left;
+  }
+
+  .header__cover-image {
+    display: block;
+  }
+
+  .movie-info__icon {
+    display: block;
+    margin: 0 20px;
+    width: 100px;
+    flex-shrink: 0;
+  }
+
+  .movie-info__contents {
+    flex-grow: 1;
+    padding: 0 20px 20px 0;
+  }
+
+  .movie-info__title-info {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .star {
+    margin: 0;
+  }
+
+  .movie-info__description {
+    text-align: left;
+  }
 }
 
 /* PC */
 @media (min-width: 960px) {
-  .header__logo {
-    text-align: left;
-  }
   .l_col_pc_12_12 {
     width: 100%;
   }
@@ -344,5 +443,13 @@ main {
   }
   .l_col_pc_1_12 {
     width: 8.33333333%;
+  }
+
+  /* pc에서는 sidebar 가 존재 */
+  .movie-sidebar {
+    display: block;
+    flex-shrink: 0;
+    width: 250px;
+    margin-left: 20px;
   }
 }
